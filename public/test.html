@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test 3rdpartycookies</title>
+</head>
+
+<body>
+    <iframe src="https://3rdpartycookies.netlify.app/?fff"></iframe>
+    <h2 id="info"></h2>
+    <script>
+        window.addEventListener("message", (event) => {
+            const info = event.data;
+            document.querySelector('#info').textContent = `Received this info from iframe: ${info}`
+        }, false);
+    </script>
+
+</body>
+
+</html>

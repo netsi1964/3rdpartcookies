@@ -8,6 +8,10 @@ For now you can use it by adding an iframe like this:
 <iframe src="https://3rdpartycookies.netlify.app/"></iframe>
 ```
 
+## Demo
+
+You can see at test here: [test](https://3rdpartycookies.netlify.app/test.html")
+
 ## Feedback
 Feedback is welcome. Create an [issue](https://github.com/netsi1964/3rdpartycookies/issues) and I will look into it.
 
