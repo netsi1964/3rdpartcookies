@@ -12,7 +12,6 @@
     <blockquote>This pen will try to set a cookie, and if it is not a success it will alert it</blockquote>
     <script>
         const testCookie = setCookie('test', new Date().toISOString())
-        document.cookie = testCookie;
         setTimeout(() => {
             if (document.cookie !== testCookie) {
                 alert('I could not set a cookie')
