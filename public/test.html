@@ -8,8 +8,16 @@
 </head>
 
 <body>
+    <h1>This is a test of <a href="https://github.com/netsi1964/3rdpartycookies" target="_blank">3rdpartycookies</a>
+    </h1>
+    <blockquote>I have tried to make a simple page which will try to set a cookie and send a <code>message</code> to the
+        page which have included the test in an iframe like this:<br>
+        <pre>&lt;iframe src="https://3rdpartycookies.netlify.app/"&gt;&lt;/iframe&gt;</pre>
+        The idea is that it could be used to test if people have blocked for 3rdparty cookies.
+    </blockquote>
     <iframe src="https://3rdpartycookies.netlify.app/?fff"></iframe>
     <h2 id="info"></h2>
+
     <script>
         window.addEventListener("message", (event) => {
             const info = event.data;
