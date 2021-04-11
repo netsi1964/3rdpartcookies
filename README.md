@@ -14,7 +14,8 @@ In the [test](https://3rdpartycookies.netlify.app/test.html) I do this:
 ```
 window.addEventListener("message", (event) => {
   const info = event.data;
-	document.querySelector('#info').textContent = `Received this info from iframe: ${JSON.stringify(info, null, 2)}`
+  document.querySelector('#info').textContent = 
+    `Received this info from iframe: ${JSON.stringify(info, null, 2)}`
 }, false);
 ```
 
