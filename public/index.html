@@ -8,7 +8,6 @@
 </head>
 
 <body>
-    <h1>I will set a cookie</h1>
     <blockquote>Initialising...</blockquote>
     <script>
         const info = document.querySelector('blockquote');
@@ -20,6 +19,9 @@
                 infoText = 'Failed setting cookie'
             };
             info.textContent = infoText
+            if (window.parent) {
+                window.parent.postMessage(infoText, '*');
+            }
         }, 1000)
         info.textContent = `Tried to set cookie: ${testCookie}`;
 
