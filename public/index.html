@@ -9,18 +9,19 @@
 
 <body>
     <h1>I will set a cookie</h1>
-    <blockquote>This pen will try to set a cookie, and if it is not a success it will alert it</blockquote>
+    <blockquote>Initialising...</blockquote>
     <script>
+        const info = document.querySelector('blockquote');
         const cookieName = '3rdpartycookie';
         const testCookie = setCookie(cookieName, new Date().toISOString())
         setTimeout(() => {
+            let infoText = 'Cookie set'
             if (getCookie(cookieName) !== testCookie) {
-                alert('I could not set a cookie')
-            } else {
-                alert('Success in setting a cookie')
-            }
+                infoText = 'Failed setting cookie'
+            };
+            info.textContent = infoText
         }, 1000)
-        console.log(`Set cookie: ${testCookie}`);
+        info.textContent = `Tried to set cookie: ${testCookie}`;
 
         function setCookie(cname, cvalue, exdays = 1) {
             const d = new Date();
