@@ -13,12 +13,14 @@
     <script>
         const testCookie = setCookie('test', new Date().toISOString())
         document.cookie = testCookie;
-        if (document.cookie !== testCookie) {
-            alert('I could not set a cookie')
-        } else {
-            alert('Success in setting a cookie')
-        }
-        console.log(testCookie)
+        setTimeout(() => {
+            if (document.cookie !== testCookie) {
+                alert('I could not set a cookie')
+            } else {
+                alert('Success in setting a cookie')
+            }
+        }, 1000)
+        console.log(`Set cookie: ${testCookie}`);
 
         function setCookie(cname, cvalue, exdays = 1) {
             const d = new Date();
