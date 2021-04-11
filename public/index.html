@@ -11,9 +11,10 @@
     <h1>I will set a cookie</h1>
     <blockquote>This pen will try to set a cookie, and if it is not a success it will alert it</blockquote>
     <script>
-        const testCookie = setCookie('test', new Date().toISOString())
+        const cookieName = '3rdpartycookie';
+        const testCookie = setCookie(cookieName, new Date().toISOString())
         setTimeout(() => {
-            if (document.cookie !== testCookie) {
+            if (getCookie(cookieName) !== testCookie) {
                 alert('I could not set a cookie')
             } else {
                 alert('Success in setting a cookie')
@@ -28,6 +29,22 @@
             const cookie = `${cname}=${cvalue};${expires};path=/`;
             document.cookie = cookie;
             return cvalue;
+        }
+
+        function getCookie(cname) {
+            let name = `${cname}=`;
+            const decodedCookie = decodeURIComponent(document.cookie);
+            const ca = decodedCookie.split(';');
+            for (let i = 0; i < ca.length; i++) {
+                let c = ca[i];
+                while (c.charAt(0) == ' ') {
+                    c = c.substring(1);
+                }
+                if (c.indexOf(name) == 0) {
+                    return c.substring(name.length, c.length);
+                }
+            }
+            return "";
         }
     </script>
 </body>
